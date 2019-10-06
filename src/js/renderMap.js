@@ -24,7 +24,27 @@ const renderMap = (Cesium, flightData) => {
         }
     }
 
-    viewer.zoomTo(point);
+    
+    let start = Cesium.Cartesian3.fromDegrees(flightData[0].longitude, flightData[0].latitude, 10*10**4)
+    
+    const nextPoint = (curIndex) => {
+        const next = Cesium.Cartesian3.fromDegrees(
+            flightData[curIndex + 10].longitude, 
+            flightData[curIndex + 10].latitude, 
+            10*10**4
+        )
+        
+        // viewer.camera.flyTo({
+        //     destination: next,
+
+        // })
+
+        return next
+    }
+
+    viewer.camera.flyTo({
+        destination: start,
+    })
 
 }
 

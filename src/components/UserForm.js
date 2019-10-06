@@ -14,7 +14,7 @@ const UserForm = ({setFlightData}) => {
         <form id="user-form" onSubmit={handleSubmit}>
             <label>Flight Aware URL</label>
             <br/>
-            <input id="user-url" type="text"/>
+            <input id="user-url" type="text" defaultValue="https://flightaware.com/live/flight/DAL8889/history/20191005/2331Z/KIAD/KATL"/>
             <br/>
             <input type="submit" value="Render Flight Route" />
         </form>

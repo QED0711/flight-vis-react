@@ -7,7 +7,9 @@ const MapContainer = ({ flightData }) => {
     const Cesium = window.Cesium;
 
     useEffect(() => {
-        renderMap(Cesium, flightData)
+        if (flightData){
+            renderMap(Cesium, flightData)
+        }
     })
 
     return (
